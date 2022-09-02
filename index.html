@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link href="https://unpkg.com/video.js/dist/video-js.min.css" rel="stylesheet">
+  <script src="https://unpkg.com/video.js/dist/video.min.js"></script>
+</head>
+<body>
+  <div>
+    <h1>use video.js</h1>
+    <video
+      id="my-player"
+      class="video-js"
+      controls
+      preload="auto"
+      poster="//vjs.zencdn.net/v/oceans.png"
+      width="400"
+      height="300"
+      data-setup='{}'>
+    <source src="audio/通話中si8.mp3" type="audio/mp3"></source>
+    <track kind="captions" src="/audio/通話中si8.vtt" srclang="ja" label="日本語" default>
+    <p class="vjs-no-js">
+      To view this video please enable JavaScript, and consider upgrading to a
+      web browser that
+      <a href="https://videojs.com/html5-video-support/" target="_blank">
+        supports HTML5 video
+      </a>
+    </p>
+  </video>  
+</div>
+
+<div>
+  <h1>not use video.js</h1>
+  <video
+    id="vanilla"
+    style="border: 1px solid;"
+    width="400"
+    height="300"
+  >
+    <source src="audio/通話中si8.mp3" type="audio/mp3"></source>
+    <track kind="captions" src="audio/通話中si8.vtt" srclang="ja" label="日本語" default />
+  </video>
+  <div>
+    <button onclick="play()">play</button>
+    <button onclick="pause()">pause</button>
+    <button onclick="stop()">stop</button>
+  </div>
+  
+</div>
+<script>
+  function play(){
+    document.getElementById("vanilla").play()
+  }
+  function pause(){
+    document.getElementById("vanilla").pause()
+  }
+  function stop(){
+    document.getElementById("vanilla").pause()
+    document.getElementById("vanilla").currentTime = 0    
+  }
+</script>
+</body>
+</html>
